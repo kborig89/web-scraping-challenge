@@ -39,11 +39,11 @@
                         <h3>Latest Mars News Article </h3>
                         <hr>
                         <h4>
-                            {{mars.news_title}}
+                            {{mars_data.news_title}}
                         </h4>
                         
                         <p> 
-                            {{mars.news_p}}
+                            {{mars_data.news_p}}
                    
                         </p>
                     </div>
@@ -53,20 +53,20 @@
                 <div class="col-md-8">
                     <div class="container">
                         <h3> Full image</h3>
-                        <img src="{{mars.full_image_url}}"> 
+                        <img src="{{mars_data.full_image_url}}"> 
                         
 
                     </div>
                 </div>
                 <div class="col-md-8">
                     <h4> Mars Facts</h4>
-                    {{mars.mars_facts | safe}}
+                    {{mars_data.mars_facts | safe}}
                 </div>
             </div>
             <div class="row">
                 <h3>Mars Hemispheres</h3>
-                {% for hemisphere in mars.hem_image_urls%}
-                {% endfor %}
+                {% for hemisphere in mars_data.hem_image_urls%}
+            
                 <div class="col-md-6">
                     <img src="{{hemisphere.img_url}}">
                     <div>
@@ -75,7 +75,7 @@
 
                     </div>
                     </div>
-    
+                {% endfor %}
         </div>
     
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
